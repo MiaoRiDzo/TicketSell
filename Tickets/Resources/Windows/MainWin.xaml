@@ -1,0 +1,45 @@
+﻿<Window x:Class="Tickets.Resources.Windows.MainWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tickets.Resources.Windows"
+        mc:Ignorable="d"
+        Title="Продажа билетов ООО ЗАПАД" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="329*"/>
+            <RowDefinition Height="53*"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="ИС ООО Запад" Style="{StaticResource tb_head2}"/>
+        </StackPanel>
+        
+        <!--CenterFrame-->
+        <Frame Grid.Row="1" Name="mFrame" NavigationUIVisibility="Hidden" Margin="8"/>
+        
+        <!--Setter-->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240*"/>
+                <ColumnDefinition Width="450*"/>
+                <ColumnDefinition Width="240*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Margin="8">
+                <TextBlock x:Name="tb_userName" Text="Пользователь: "/>
+                <TextBlock x:Name="tb_userRole" Text=""/>
+            </StackPanel>
+            
+            <!--DockPanel-->
+            <StackPanel x:Name="dockPanel" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button x:Name="btn_back" Content="Назад" Click="btn_back_Click"/>
+                <Button x:Name="btn_exit" Content="Выйти" Click="btn_exit_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
