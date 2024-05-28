@@ -21,6 +21,7 @@ namespace Tickets.Resources.LibsAndDitcionary
         }
     
         public int RaceID { get; set; }
+        public string RaceNum { get; set; }
         public int ItinaryID { get; set; }
         public int AutobusID { get; set; }
         public System.DateTime RaceDate { get; set; }

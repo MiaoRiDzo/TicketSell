@@ -43,6 +43,7 @@
             <PropertyRef Name="RaceID" />
           </Key>
           <Property Name="RaceID" Type="int" Nullable="false" />
+          <Property Name="RaceNum" Type="nchar" MaxLength="10" />
           <Property Name="ItinaryID" Type="int" Nullable="false" />
           <Property Name="AutobusID" Type="int" Nullable="false" />
           <Property Name="RaceDate" Type="datetime" Nullable="false" />
@@ -273,6 +274,7 @@
             <PropertyRef Name="RaceID" />
           </Key>
           <Property Name="RaceID" Type="Int32" Nullable="false" />
+          <Property Name="RaceNum" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="ItinaryID" Type="Int32" Nullable="false" />
           <Property Name="AutobusID" Type="Int32" Nullable="false" />
           <Property Name="RaceDate" Type="DateTime" Nullable="false" Precision="3" />
@@ -411,7 +413,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SellTicketsDBEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SellTicketsDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Autobus" EntityType="Self.Autobus" />
           <EntitySet Name="Buyer" EntityType="Self.Buyer" />
           <EntitySet Name="Destination" EntityType="Self.Destination" />
@@ -455,7 +457,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище SellTicketsDBModelContainer" CdmEntityContainer="SellTicketsDBEntities1">
+        <EntityContainerMapping StorageEntityContainer="Хранилище SellTicketsDBModelContainer" CdmEntityContainer="SellTicketsDBEntities">
           <EntitySetMapping Name="Autobus">
             <EntityTypeMapping TypeName="SellTicketsDBModel.Autobus">
               <MappingFragment StoreEntitySet="Autobus">
@@ -497,6 +499,7 @@
             <EntityTypeMapping TypeName="SellTicketsDBModel.Race">
               <MappingFragment StoreEntitySet="Race">
                 <ScalarProperty Name="RaceID" ColumnName="RaceID" />
+                <ScalarProperty Name="RaceNum" ColumnName="RaceNum" />
                 <ScalarProperty Name="ItinaryID" ColumnName="ItinaryID" />
                 <ScalarProperty Name="AutobusID" ColumnName="AutobusID" />
                 <ScalarProperty Name="RaceDate" ColumnName="RaceDate" />

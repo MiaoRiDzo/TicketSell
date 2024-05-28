@@ -39,7 +39,8 @@ namespace Tickets.Resources.Pages.Tables.DestinationPage
             btn_del.Content = "Удалить";
 
             btn_del.Click += (sender, e) => AppData.DeleteItems<Destination>(dg_destinatoin);
-
+            
+            AppData.dockPanel.Children.Add(btn_add);
             AppData.dockPanel.Children.Add(btn_del);
         }
     }

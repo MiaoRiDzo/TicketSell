@@ -13,10 +13,10 @@ namespace Tickets.Resources.LibsAndDitcionary
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SellTicketsDBEntities1 : DbContext
+    public partial class SellTicketsDBEntities : DbContext
     {
-        public SellTicketsDBEntities1()
-            : base("name=SellTicketsDBEntities1")
+        public SellTicketsDBEntities()
+            : base("name=SellTicketsDBEntities")
         {
         }
     

@@ -12,12 +12,12 @@
         <StackPanel Orientation="Vertical">
             <Button x:Name="btn_users" Content="Пользователи" Click="btn_users_Click"/>
             <Button x:Name="btn_races" Content="Рейсы"/>
-            <Button x:Name="btn_points" Content="Остановки"/>
+            <Button x:Name="btn_citys" Content="Остановки" Click="btn_citys_Click"/>
         </StackPanel>
         <StackPanel Orientation="Vertical">
-            <Button x:Name="btn_citys" Content="Населенные пункты" Click="btn_citys_Click"/>
             <Button x:Name="btn_autobus" Content="Автобусы"/>
             <Button x:Name="btn_bilets" Content="Билеты"/>
+            <Button x:Name="btn_itinerary" Content="Маршруты" Click="btn_itinerary_Click"/>
         </StackPanel>
     </StackPanel>
 </Page>

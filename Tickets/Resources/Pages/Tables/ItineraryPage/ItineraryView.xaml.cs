@@ -15,31 +15,30 @@ using System.Windows.Shapes;
 using Tickets.Resources.LibsAndDictionary;
 using Tickets.Resources.LibsAndDitcionary;
 
-namespace Tickets.Resources.Pages.Tables.UserPage
+namespace Tickets.Resources.Pages.Tables.ItineraryPage
 {
     /// <summary>
-    /// Логика взаимодействия для ViewUser.xaml
+    /// Логика взаимодействия для ItineraryView.xaml
     /// </summary>
-    public partial class ViewUser : Page
+    public partial class ItineraryView : Page
     {
-        public ViewUser()
+        public ItineraryView()
         {
             InitializeComponent();
-            dg_user.ItemsSource = AppData.getContext().User.ToList();
-            //dock
+            dg_itinary.ItemsSource = AppData.getContext().Itinary.ToList();
             addBtns();
         }
 
-        private void addBtns() { 
-            
+        private void addBtns()
+        {
+
             Button btn_del = new Button();
             Button btn_add = new Button();
-            
+
             btn_add.Content = "Добавить";
             btn_del.Content = "Удалить";
 
-            btn_del.Click += (sender, e) => AppData.DeleteItems<User>(dg_user);
-            
+            btn_del.Click += (sender, e) => AppData.DeleteItems<Itinary>(dg_itinary);
             AppData.dockPanel.Children.Add(btn_add);
             AppData.dockPanel.Children.Add(btn_del);
         }

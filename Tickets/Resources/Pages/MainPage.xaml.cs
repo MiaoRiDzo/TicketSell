@@ -35,5 +35,10 @@ namespace Tickets.Resources.Pages
         {
             AppData.mFrame.Navigate(new Pages.Tables.DestinationPage.DestinationView());
         }
+
+        private void btn_itinerary_Click(object sender, RoutedEventArgs e)
+        {
+            AppData.mFrame.Navigate(new Pages.Tables.ItineraryPage.ItineraryView());
+        }
     }
 }

@@ -66,53 +66,59 @@
     </ApplicationDefinition>
     <Compile Include="Resources\LibsAndDitcionary\AppData.cs" />
     <Compile Include="Resources\LibsAndDitcionary\Autobus.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Resources\LibsAndDitcionary\Buyer.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Resources\LibsAndDitcionary\Destination.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Resources\LibsAndDitcionary\Itinary.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Resources\LibsAndDitcionary\md5.cs" />
-    <Compile Include="Resources\LibsAndDitcionary\Model.Context.cs">
+    <Compile Include="Resources\LibsAndDitcionary\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Resources\LibsAndDitcionary\Model.cs">
+    <Compile Include="Resources\LibsAndDitcionary\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Resources\LibsAndDitcionary\Model.Designer.cs">
+    <Compile Include="Resources\LibsAndDitcionary\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Resources\LibsAndDitcionary\Race.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Resources\LibsAndDitcionary\Role.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Resources\LibsAndDitcionary\sysdiagrams.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Resources\LibsAndDitcionary\Ticket.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Resources\LibsAndDitcionary\User.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Resources\Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resources\Pages\Tables\DestinationPage\DestinationView.xaml.cs">
       <DependentUpon>DestinationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Pages\Tables\ItineraryPage\ItineraryView.xaml.cs">
+      <DependentUpon>ItineraryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Pages\Tables\RacePage\RaceView.xaml.cs">
+      <DependentUpon>RaceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resources\Pages\Tables\UserPage\ViewUser.xaml.cs">
       <DependentUpon>ViewUser.xaml</DependentUpon>
@@ -136,6 +142,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Resources\Pages\Tables\DestinationPage\DestinationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Pages\Tables\ItineraryPage\ItineraryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Pages\Tables\RacePage\RaceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,12 +189,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <EntityDeploy Include="Resources\LibsAndDitcionary\Model.edmx">
+    <EntityDeploy Include="Resources\LibsAndDitcionary\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Resources\LibsAndDitcionary\Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
+    <None Include="Resources\LibsAndDitcionary\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -190,15 +204,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\LibsAndDitcionary\Model.Context.tt">
+    <Content Include="Resources\LibsAndDitcionary\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Resources\LibsAndDitcionary\Model.tt">
+    <Content Include="Resources\LibsAndDitcionary\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
