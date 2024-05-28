@@ -26,12 +26,22 @@ namespace Tickets.Resources.Pages.Tables.DestinationPage
         {
             InitializeComponent();
             dg_destinatoin.ItemsSource = AppData.getContext().Destination.ToList();
-
+            addBtns();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void addBtns()
         {
-            AppData.AddDock<Destination>(dg_destinatoin, () => AppData.mFrame.Navigate(new DestinationPage.DestinationEdit(null)));
+
+            Button btn_del = new Button();
+            Button btn_add = new Button();
+
+            btn_add.Content = "Добавить";
+            btn_del.Content = "Удалить";
+
+            btn_del.Click += (sender, e) => AppData.DeleteItems<Destination>(dg_destinatoin);
+            
+            AppData.dockPanel.Children.Add(btn_add);
+            AppData.dockPanel.Children.Add(btn_del);
         }
     }
 }
