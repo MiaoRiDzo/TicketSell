@@ -15,7 +15,7 @@
             <Button x:Name="btn_points" Content="Остановки"/>
         </StackPanel>
         <StackPanel Orientation="Vertical">
-            <Button x:Name="btn_citys" Content="Населенные пункты"/>
+            <Button x:Name="btn_citys" Content="Населенные пункты" Click="btn_citys_Click"/>
             <Button x:Name="btn_autobus" Content="Автобусы"/>
             <Button x:Name="btn_bilets" Content="Билеты"/>
         </StackPanel>

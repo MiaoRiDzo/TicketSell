@@ -15,30 +15,30 @@ using System.Windows.Shapes;
 using Tickets.Resources.LibsAndDictionary;
 using Tickets.Resources.LibsAndDitcionary;
 
-namespace Tickets.Resources.Pages.Tables.UserPage
+namespace Tickets.Resources.Pages.Tables.DestinationPage
 {
     /// <summary>
-    /// Логика взаимодействия для ViewUser.xaml
+    /// Логика взаимодействия для DestinationView.xaml
     /// </summary>
-    public partial class ViewUser : Page
+    public partial class DestinationView : Page
     {
-        public ViewUser()
+        public DestinationView()
         {
             InitializeComponent();
-            dg_user.ItemsSource = AppData.getContext().User.ToList();
-            //dock
+            dg_destinatoin.ItemsSource = AppData.getContext().Destination.ToList();
             addBtns();
         }
 
-        private void addBtns() { 
-            
+        private void addBtns()
+        {
+
             Button btn_del = new Button();
             Button btn_add = new Button();
-            
+
             btn_add.Content = "Добавить";
             btn_del.Content = "Удалить";
 
-            btn_del.Click += (sender, e) => AppData.DeleteItems<User>(dg_user);
+            btn_del.Click += (sender, e) => AppData.DeleteItems<Destination>(dg_destinatoin);
 
             AppData.dockPanel.Children.Add(btn_del);
         }

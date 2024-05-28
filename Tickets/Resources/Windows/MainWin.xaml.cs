@@ -47,6 +47,7 @@ namespace Tickets.Resources.Windows
             try
             {
                 mFrame.GoBack();
+                AppData.dockPanel.Children.Clear();
             }
             catch { }
         }

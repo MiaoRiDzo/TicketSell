@@ -30,5 +30,10 @@ namespace Tickets.Resources.Pages
         {
             AppData.mFrame.Navigate(new Pages.Tables.UserPage.ViewUser());
         }
+
+        private void btn_citys_Click(object sender, RoutedEventArgs e)
+        {
+            AppData.mFrame.Navigate(new Pages.Tables.DestinationPage.DestinationView());
+        }
     }
 }
