@@ -27,7 +27,7 @@ namespace Tickets.Resources.LibsAndDitcionary
         public decimal Price { get; set; }
     
         public virtual Autobus Autobus { get; set; }
-        public virtual Itinerary Itinerary { get; set; }
+        public virtual Itinary Itinary { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ticket> Ticket { get; set; }
     }

@@ -13,10 +13,10 @@ namespace Tickets.Resources.LibsAndDitcionary
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SellTicketsDBEntities : DbContext
+    public partial class SellTicketsDBEntities1 : DbContext
     {
-        public SellTicketsDBEntities()
-            : base("name=SellTicketsDBEntities")
+        public SellTicketsDBEntities1()
+            : base("name=SellTicketsDBEntities1")
         {
         }
     
@@ -28,7 +28,7 @@ namespace Tickets.Resources.LibsAndDitcionary
         public virtual DbSet<Autobus> Autobus { get; set; }
         public virtual DbSet<Buyer> Buyer { get; set; }
         public virtual DbSet<Destination> Destination { get; set; }
-        public virtual DbSet<Itinerary> Itinerary { get; set; }
+        public virtual DbSet<Itinary> Itinary { get; set; }
         public virtual DbSet<Race> Race { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }

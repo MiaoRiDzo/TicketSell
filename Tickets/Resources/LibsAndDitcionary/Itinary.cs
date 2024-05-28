@@ -12,10 +12,10 @@ namespace Tickets.Resources.LibsAndDitcionary
     using System;
     using System.Collections.Generic;
     
-    public partial class Itinerary
+    public partial class Itinary
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Itinerary()
+        public Itinary()
         {
             this.Race = new HashSet<Race>();
         }

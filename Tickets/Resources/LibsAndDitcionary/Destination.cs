@@ -17,16 +17,16 @@ namespace Tickets.Resources.LibsAndDitcionary
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Destination()
         {
-            this.Itinerary = new HashSet<Itinerary>();
-            this.Itinerary1 = new HashSet<Itinerary>();
+            this.Itinary = new HashSet<Itinary>();
+            this.Itinary1 = new HashSet<Itinary>();
         }
     
         public int DestinationID { get; set; }
         public string Adress { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Itinerary> Itinerary { get; set; }
+        public virtual ICollection<Itinary> Itinary { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Itinerary> Itinerary1 { get; set; }
+        public virtual ICollection<Itinary> Itinary1 { get; set; }
     }
 }

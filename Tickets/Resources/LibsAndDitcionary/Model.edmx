@@ -30,7 +30,7 @@
           <Property Name="DestinationID" Type="int" Nullable="false" />
           <Property Name="Adress" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="Itinerary">
+        <EntityType Name="Itinary">
           <Key>
             <PropertyRef Name="ItinaryID" />
           </Key>
@@ -94,24 +94,24 @@
         </EntityType>
         <Association Name="FK_Itinerary_Destination">
           <End Role="Destination" Type="Self.Destination" Multiplicity="1" />
-          <End Role="Itinerary" Type="Self.Itinerary" Multiplicity="*" />
+          <End Role="Itinary" Type="Self.Itinary" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Destination">
               <PropertyRef Name="DestinationID" />
             </Principal>
-            <Dependent Role="Itinerary">
+            <Dependent Role="Itinary">
               <PropertyRef Name="DeparturePoint" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Itinerary_Destination1">
           <End Role="Destination" Type="Self.Destination" Multiplicity="1" />
-          <End Role="Itinerary" Type="Self.Itinerary" Multiplicity="*" />
+          <End Role="Itinary" Type="Self.Itinary" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Destination">
               <PropertyRef Name="DestinationID" />
             </Principal>
-            <Dependent Role="Itinerary">
+            <Dependent Role="Itinary">
               <PropertyRef Name="ArrivalPoint" />
             </Dependent>
           </ReferentialConstraint>
@@ -129,10 +129,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Race_Itinerary">
-          <End Role="Itinerary" Type="Self.Itinerary" Multiplicity="1" />
+          <End Role="Itinary" Type="Self.Itinary" Multiplicity="1" />
           <End Role="Race" Type="Self.Race" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Itinerary">
+            <Principal Role="Itinary">
               <PropertyRef Name="ItinaryID" />
             </Principal>
             <Dependent Role="Race">
@@ -180,7 +180,7 @@
           <EntitySet Name="Autobus" EntityType="Self.Autobus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Buyer" EntityType="Self.Buyer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Destination" EntityType="Self.Destination" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Itinerary" EntityType="Self.Itinerary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Itinary" EntityType="Self.Itinary" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Race" EntityType="Self.Race" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -196,18 +196,18 @@
           </EntitySet>
           <AssociationSet Name="FK_Itinerary_Destination" Association="Self.FK_Itinerary_Destination">
             <End Role="Destination" EntitySet="Destination" />
-            <End Role="Itinerary" EntitySet="Itinerary" />
+            <End Role="Itinary" EntitySet="Itinary" />
           </AssociationSet>
           <AssociationSet Name="FK_Itinerary_Destination1" Association="Self.FK_Itinerary_Destination1">
             <End Role="Destination" EntitySet="Destination" />
-            <End Role="Itinerary" EntitySet="Itinerary" />
+            <End Role="Itinary" EntitySet="Itinary" />
           </AssociationSet>
           <AssociationSet Name="FK_Race_Autobus" Association="Self.FK_Race_Autobus">
             <End Role="Autobus" EntitySet="Autobus" />
             <End Role="Race" EntitySet="Race" />
           </AssociationSet>
           <AssociationSet Name="FK_Race_Itinerary" Association="Self.FK_Race_Itinerary">
-            <End Role="Itinerary" EntitySet="Itinerary" />
+            <End Role="Itinary" EntitySet="Itinary" />
             <End Role="Race" EntitySet="Race" />
           </AssociationSet>
           <AssociationSet Name="FK_Ticket_Buyer" Association="Self.FK_Ticket_Buyer">
@@ -254,19 +254,19 @@
           </Key>
           <Property Name="DestinationID" Type="Int32" Nullable="false" />
           <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Itinerary" Relationship="Self.FK_Itinerary_Destination" FromRole="Destination" ToRole="Itinerary" />
-          <NavigationProperty Name="Itinerary1" Relationship="Self.FK_Itinerary_Destination1" FromRole="Destination" ToRole="Itinerary" />
+          <NavigationProperty Name="Itinary" Relationship="Self.FK_Itinerary_Destination" FromRole="Destination" ToRole="Itinary" />
+          <NavigationProperty Name="Itinary1" Relationship="Self.FK_Itinerary_Destination1" FromRole="Destination" ToRole="Itinary" />
         </EntityType>
-        <EntityType Name="Itinerary">
+        <EntityType Name="Itinary">
           <Key>
             <PropertyRef Name="ItinaryID" />
           </Key>
           <Property Name="ItinaryID" Type="Int32" Nullable="false" />
           <Property Name="DeparturePoint" Type="Int32" Nullable="false" />
           <Property Name="ArrivalPoint" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Destination" Relationship="Self.FK_Itinerary_Destination" FromRole="Itinerary" ToRole="Destination" />
-          <NavigationProperty Name="Destination1" Relationship="Self.FK_Itinerary_Destination1" FromRole="Itinerary" ToRole="Destination" />
-          <NavigationProperty Name="Race" Relationship="Self.FK_Race_Itinerary" FromRole="Itinerary" ToRole="Race" />
+          <NavigationProperty Name="Destination" Relationship="Self.FK_Itinerary_Destination" FromRole="Itinary" ToRole="Destination" />
+          <NavigationProperty Name="Destination1" Relationship="Self.FK_Itinerary_Destination1" FromRole="Itinary" ToRole="Destination" />
+          <NavigationProperty Name="Race" Relationship="Self.FK_Race_Itinerary" FromRole="Itinary" ToRole="Race" />
         </EntityType>
         <EntityType Name="Race">
           <Key>
@@ -278,7 +278,7 @@
           <Property Name="RaceDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <NavigationProperty Name="Autobus" Relationship="Self.FK_Race_Autobus" FromRole="Race" ToRole="Autobus" />
-          <NavigationProperty Name="Itinerary" Relationship="Self.FK_Race_Itinerary" FromRole="Race" ToRole="Itinerary" />
+          <NavigationProperty Name="Itinary" Relationship="Self.FK_Race_Itinerary" FromRole="Race" ToRole="Itinary" />
           <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_Race" FromRole="Race" ToRole="Ticket" />
         </EntityType>
         <EntityType Name="Role">
@@ -353,33 +353,33 @@
         </Association>
         <Association Name="FK_Itinerary_Destination">
           <End Role="Destination" Type="Self.Destination" Multiplicity="1" />
-          <End Role="Itinerary" Type="Self.Itinerary" Multiplicity="*" />
+          <End Role="Itinary" Type="Self.Itinary" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Destination">
               <PropertyRef Name="DestinationID" />
             </Principal>
-            <Dependent Role="Itinerary">
+            <Dependent Role="Itinary">
               <PropertyRef Name="DeparturePoint" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Itinerary_Destination1">
           <End Role="Destination" Type="Self.Destination" Multiplicity="1" />
-          <End Role="Itinerary" Type="Self.Itinerary" Multiplicity="*" />
+          <End Role="Itinary" Type="Self.Itinary" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Destination">
               <PropertyRef Name="DestinationID" />
             </Principal>
-            <Dependent Role="Itinerary">
+            <Dependent Role="Itinary">
               <PropertyRef Name="ArrivalPoint" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Race_Itinerary">
-          <End Role="Itinerary" Type="Self.Itinerary" Multiplicity="1" />
+          <End Role="Itinary" Type="Self.Itinary" Multiplicity="1" />
           <End Role="Race" Type="Self.Race" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Itinerary">
+            <Principal Role="Itinary">
               <PropertyRef Name="ItinaryID" />
             </Principal>
             <Dependent Role="Race">
@@ -411,11 +411,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SellTicketsDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SellTicketsDBEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Autobus" EntityType="Self.Autobus" />
           <EntitySet Name="Buyer" EntityType="Self.Buyer" />
           <EntitySet Name="Destination" EntityType="Self.Destination" />
-          <EntitySet Name="Itinerary" EntityType="Self.Itinerary" />
+          <EntitySet Name="Itinary" EntityType="Self.Itinary" />
           <EntitySet Name="Race" EntityType="Self.Race" />
           <EntitySet Name="Role" EntityType="Self.Role" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
@@ -431,14 +431,14 @@
           </AssociationSet>
           <AssociationSet Name="FK_Itinerary_Destination" Association="Self.FK_Itinerary_Destination">
             <End Role="Destination" EntitySet="Destination" />
-            <End Role="Itinerary" EntitySet="Itinerary" />
+            <End Role="Itinary" EntitySet="Itinary" />
           </AssociationSet>
           <AssociationSet Name="FK_Itinerary_Destination1" Association="Self.FK_Itinerary_Destination1">
             <End Role="Destination" EntitySet="Destination" />
-            <End Role="Itinerary" EntitySet="Itinerary" />
+            <End Role="Itinary" EntitySet="Itinary" />
           </AssociationSet>
           <AssociationSet Name="FK_Race_Itinerary" Association="Self.FK_Race_Itinerary">
-            <End Role="Itinerary" EntitySet="Itinerary" />
+            <End Role="Itinary" EntitySet="Itinary" />
             <End Role="Race" EntitySet="Race" />
           </AssociationSet>
           <AssociationSet Name="FK_Ticket_Race" Association="Self.FK_Ticket_Race">
@@ -455,7 +455,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище SellTicketsDBModelContainer" CdmEntityContainer="SellTicketsDBEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище SellTicketsDBModelContainer" CdmEntityContainer="SellTicketsDBEntities1">
           <EntitySetMapping Name="Autobus">
             <EntityTypeMapping TypeName="SellTicketsDBModel.Autobus">
               <MappingFragment StoreEntitySet="Autobus">
@@ -484,9 +484,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Itinerary">
-            <EntityTypeMapping TypeName="SellTicketsDBModel.Itinerary">
-              <MappingFragment StoreEntitySet="Itinerary">
+          <EntitySetMapping Name="Itinary">
+            <EntityTypeMapping TypeName="SellTicketsDBModel.Itinary">
+              <MappingFragment StoreEntitySet="Itinary">
                 <ScalarProperty Name="ItinaryID" ColumnName="ItinaryID" />
                 <ScalarProperty Name="DeparturePoint" ColumnName="DeparturePoint" />
                 <ScalarProperty Name="ArrivalPoint" ColumnName="ArrivalPoint" />
