@@ -50,5 +50,11 @@ namespace Tickets.Resources.Pages
         {
             AppData.mFrame.Navigate(new Pages.Tables.AutobusPage.AutobusView());
         }
+
+        private void btn_buyers_Click(object sender, RoutedEventArgs e)
+        {
+            AppData.mFrame.Navigate(new Pages.Tables.BuyerPage.BuyerView());
+        }
+
     }
 }

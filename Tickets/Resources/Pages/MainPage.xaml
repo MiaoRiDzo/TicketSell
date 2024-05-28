@@ -13,6 +13,7 @@
             <Button x:Name="btn_users" Content="Пользователи" Click="btn_users_Click"/>
             <Button x:Name="btn_races" Content="Рейсы" Click="btn_races_Click"/>
             <Button x:Name="btn_citys" Content="Остановки" Click="btn_citys_Click"/>
+            <Button x:Name="btn_buyers" Content="Покупатели" Click="btn_buyers_Click"/>
         </StackPanel>
         <StackPanel Orientation="Vertical">
             <Button x:Name="btn_autobus" Content="Автобусы" Click="btn_autobus_Click"/>
