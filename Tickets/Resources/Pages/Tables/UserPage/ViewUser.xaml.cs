@@ -26,22 +26,12 @@ namespace Tickets.Resources.Pages.Tables.UserPage
         {
             InitializeComponent();
             dg_user.ItemsSource = AppData.getContext().User.ToList();
-            //dock
-            addBtns();
+
         }
 
-        private void addBtns() { 
-            
-            Button btn_del = new Button();
-            Button btn_add = new Button();
-            
-            btn_add.Content = "Добавить";
-            btn_del.Content = "Удалить";
-
-            btn_del.Click += (sender, e) => AppData.DeleteItems<User>(dg_user);
-            
-            AppData.dockPanel.Children.Add(btn_add);
-            AppData.dockPanel.Children.Add(btn_del);
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            AppData.AddDock<User>(dg_user, () => AppData.mFrame.Navigate(new UserPage.UserEdit(null)));
         }
     }
 }

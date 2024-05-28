@@ -1,13 +1,12 @@
-﻿<Page x:Class="Tickets.Resources.Pages.Tables.UserPage.ViewUser"
+﻿<Page x:Class="Tickets.Resources.Pages.Tables.TicketsPage.TicketsView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Tickets.Resources.Pages.Tables.UserPage"
-      mc:Ignorable="d"
-      Loaded="Page_Loaded"
-      d:DesignHeight="330" d:DesignWidth="770"
-      Title="ViewUser">
+      xmlns:local="clr-namespace:Tickets.Resources.Pages.Tables.TicketsPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="770"
+      Title="TicketsView">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -17,11 +16,14 @@
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,10,0" Height="46">
             <Button Content="Поиск"/>
         </StackPanel>
-        <DataGrid Grid.Row="1" x:Name="dg_user" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="1" x:Name="dg_tickets" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
 
-                <DataGridTextColumn Header="Имя пользователя" Binding="{Binding UserName}"/>
-                <DataGridTextColumn Header="Роль пользователя" Binding="{Binding Role.RoleName}"/>
+                <DataGridTextColumn Header="Номер билета" Binding="{Binding TicketID}"/>
+                <DataGridTextColumn Header="ФИО Покупателя" Binding="{Binding Buyer.FullName}"/>
+                <DataGridTextColumn Header="Номер рейса" Binding="{Binding Race.RaceNum}"/>
+                <DataGridTextColumn Header="Дата покупки" Binding="{Binding PurchaseDate}"/>
+                <DataGridTextColumn Header="Цена билета" Binding="{Binding Price}"/>
 
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -35,4 +37,5 @@
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
+    
 </Page>

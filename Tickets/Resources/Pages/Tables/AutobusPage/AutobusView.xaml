@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Tickets.Resources.Pages.Tables.AutobusPage"
       mc:Ignorable="d" 
+      Loaded="Page_Loaded"
       d:DesignHeight="300" d:DesignWidth="770"
       Title="AutobusView">
 

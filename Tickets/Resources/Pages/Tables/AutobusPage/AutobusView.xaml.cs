@@ -28,19 +28,25 @@ namespace Tickets.Resources.Pages.Tables.AutobusPage
             dg_bus.ItemsSource = AppData.getContext().Autobus.ToList();
         }
 
-        private void addBtns()
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            AppData.AddDock<Autobus>(dg_bus, () => AppData.mFrame.Navigate(new AutobusPage.AutobusEdit(null)), delItems);
+        }
 
-            Button btn_del = new Button();
-            Button btn_add = new Button();
-
-            btn_add.Content = "Добавить";
-            btn_del.Content = "Удалить";
-
-            btn_del.Click += (sender, e) => AppData.DeleteItems<Autobus>(dg_bus);
-            
-            AppData.dockPanel.Children.Add(btn_add);
-            AppData.dockPanel.Children.Add(btn_del);
+        private void delItems()
+        {
+            var removes = dg_bus.SelectedItems.Cast<Autobus>().ToList();
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {removes.Count()} элементы?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    AppData.getContext().Autobus.RemoveRange(removes);
+                    AppData.getContext().SaveChanges();
+                    MessageBox.Show("Данные удалены");
+                    dg_bus.ItemsSource = AppData.getContext().Autobus.ToList();
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message.ToString()); }
+            }
         }
     }
 }

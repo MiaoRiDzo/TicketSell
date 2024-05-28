@@ -15,23 +15,19 @@ using System.Windows.Shapes;
 using Tickets.Resources.LibsAndDictionary;
 using Tickets.Resources.LibsAndDitcionary;
 
-namespace Tickets.Resources.Pages.Tables.BuyerPage
+namespace Tickets.Resources.Pages.Tables.TicketsPage
 {
     /// <summary>
-    /// Логика взаимодействия для BuyerView.xaml
+    /// Логика взаимодействия для TicketsEdit.xaml
     /// </summary>
-    public partial class BuyerView : Page
+    public partial class TicketsEdit : Page
     {
-        public BuyerView()
+        Ticket _current;
+        public TicketsEdit(Ticket ticket)
         {
             InitializeComponent();
-            dg_buyer.ItemsSource = AppData.getContext().Buyer.ToList();
-            
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            AppData.AddDock<Buyer>(dg_buyer, () => AppData.mFrame.Navigate(new BuyerPage.BuyerEdit(null)));
+            AppData.dockPanel.Children.Clear();
+            _current = ticket;
         }
     }
 }

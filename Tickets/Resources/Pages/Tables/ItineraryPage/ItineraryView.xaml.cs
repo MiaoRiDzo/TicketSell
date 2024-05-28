@@ -25,22 +25,13 @@ namespace Tickets.Resources.Pages.Tables.ItineraryPage
         public ItineraryView()
         {
             InitializeComponent();
-            dg_itinary.ItemsSource = AppData.getContext().Itinary.ToList();
-            addBtns();
+            dg_itinary.ItemsSource = AppData.getContext().Itinary.ToList();  
         }
 
-        private void addBtns()
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            AppData.AddDock<Itinary>(dg_itinary, () => AppData.mFrame.Navigate(new ItineraryPage.ItineraryEdit(null)));
 
-            Button btn_del = new Button();
-            Button btn_add = new Button();
-
-            btn_add.Content = "Добавить";
-            btn_del.Content = "Удалить";
-
-            btn_del.Click += (sender, e) => AppData.DeleteItems<Itinary>(dg_itinary);
-            AppData.dockPanel.Children.Add(btn_add);
-            AppData.dockPanel.Children.Add(btn_del);
         }
     }
 }
