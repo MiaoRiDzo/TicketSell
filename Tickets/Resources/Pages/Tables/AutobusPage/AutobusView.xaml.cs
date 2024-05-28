@@ -15,18 +15,17 @@ using System.Windows.Shapes;
 using Tickets.Resources.LibsAndDictionary;
 using Tickets.Resources.LibsAndDitcionary;
 
-namespace Tickets.Resources.Pages.Tables.RacePage
+namespace Tickets.Resources.Pages.Tables.AutobusPage
 {
     /// <summary>
-    /// Логика взаимодействия для RaceView.xaml
+    /// Логика взаимодействия для AutobusView.xaml
     /// </summary>
-    public partial class RaceView : Page
+    public partial class AutobusView : Page
     {
-        public RaceView()
+        public AutobusView()
         {
             InitializeComponent();
-            dg_race.ItemsSource = AppData.getContext().Race.ToList();
-            addBtns();
+            dg_bus.ItemsSource = AppData.getContext().Autobus.ToList();
         }
 
         private void addBtns()
@@ -38,7 +37,7 @@ namespace Tickets.Resources.Pages.Tables.RacePage
             btn_add.Content = "Добавить";
             btn_del.Content = "Удалить";
 
-            btn_del.Click += (sender, e) => AppData.DeleteItems<User>(dg_race);
+            btn_del.Click += (sender, e) => AppData.DeleteItems<Autobus>(dg_bus);
             
             AppData.dockPanel.Children.Add(btn_add);
             AppData.dockPanel.Children.Add(btn_del);

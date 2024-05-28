@@ -111,6 +111,9 @@
     <Compile Include="Resources\Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Pages\Tables\AutobusPage\AutobusView.xaml.cs">
+      <DependentUpon>AutobusView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Pages\Tables\DestinationPage\DestinationView.xaml.cs">
       <DependentUpon>DestinationView.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,10 @@
     <Page Include="Resources\Pages\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Pages\Tables\AutobusPage\AutobusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Pages\Tables\DestinationPage\DestinationView.xaml">
       <SubType>Designer</SubType>

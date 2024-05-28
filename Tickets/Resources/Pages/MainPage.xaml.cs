@@ -40,5 +40,15 @@ namespace Tickets.Resources.Pages
         {
             AppData.mFrame.Navigate(new Pages.Tables.ItineraryPage.ItineraryView());
         }
+
+        private void btn_races_Click(object sender, RoutedEventArgs e)
+        {
+            AppData.mFrame.Navigate(new Pages.Tables.RacePage.RaceView());
+        }
+
+        private void btn_autobus_Click(object sender, RoutedEventArgs e)
+        {
+            AppData.mFrame.Navigate(new Pages.Tables.AutobusPage.AutobusView());
+        }
     }
 }
