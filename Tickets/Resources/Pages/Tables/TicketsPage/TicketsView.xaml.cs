@@ -15,19 +15,19 @@ using System.Windows.Shapes;
 using Tickets.Resources.LibsAndDictionary;
 using Tickets.Resources.LibsAndDitcionary;
 
-namespace Tickets.Resources.Pages.Tables.UserPage
+namespace Tickets.Resources.Pages.Tables.TicketsPage
 {
     /// <summary>
-    /// Логика взаимодействия для ViewUser.xaml
+    /// Логика взаимодействия для TicketsVie.xaml
     /// </summary>
-    public partial class ViewUser : Page
+    public partial class TicketsView : Page
     {
-        public ViewUser()
+        public TicketsView(Ticket ticket)
         {
             InitializeComponent();
-            dg_user.ItemsSource = AppData.getContext().User.ToList();
-            
-            AppData.AddDock<User>(dg_user, () => new UserPage.UserEdit(null));
+            dg_ticket.ItemsSource = AppData.getContext().Ticket.ToList();
+            AppData.AddDock<Ticket>(dg_ticket, () => new TicketsPage.TicketsEdit(null));
+
         }
     }
 }

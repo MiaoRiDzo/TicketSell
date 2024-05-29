@@ -18,16 +18,16 @@ using Tickets.Resources.LibsAndDitcionary;
 namespace Tickets.Resources.Pages.Tables.UserPage
 {
     /// <summary>
-    /// Логика взаимодействия для ViewUser.xaml
+    /// Логика взаимодействия для UserEdit.xaml
     /// </summary>
-    public partial class ViewUser : Page
+    public partial class UserEdit : Page
     {
-        public ViewUser()
+        User _current;
+        public UserEdit(User user)
         {
             InitializeComponent();
-            dg_user.ItemsSource = AppData.getContext().User.ToList();
-            
-            AppData.AddDock<User>(dg_user, () => new UserPage.UserEdit(null));
+            _current = user;
+            AppData.dockPanel.Children.Clear();
         }
     }
 }

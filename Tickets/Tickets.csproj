@@ -141,6 +141,15 @@
     <Compile Include="Resources\Pages\Tables\RacePage\RaceView.xaml.cs">
       <DependentUpon>RaceView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Pages\Tables\TicketsPage\TicketsEdit.xaml.cs">
+      <DependentUpon>TicketsEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Pages\Tables\TicketsPage\TicketsView.xaml.cs">
+      <DependentUpon>TicketsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Pages\Tables\UserPage\UserEdit.xaml.cs">
+      <DependentUpon>UserEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Pages\Tables\UserPage\ViewUser.xaml.cs">
       <DependentUpon>ViewUser.xaml</DependentUpon>
     </Compile>
@@ -199,6 +208,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Pages\Tables\RacePage\RaceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Pages\Tables\TicketsPage\TicketsEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Pages\Tables\TicketsPage\TicketsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Pages\Tables\UserPage\UserEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
