@@ -114,6 +114,9 @@
     <Compile Include="Resources\Pages\Tables\AutobusPage\AutobusView.xaml.cs">
       <DependentUpon>AutobusView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Pages\Tables\BuyerPage\BuyerEdit.xaml.cs">
+      <DependentUpon>BuyerEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Pages\Tables\BuyerPage\BuyerView.xaml.cs">
       <DependentUpon>BuyerView.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Resources\Pages\Tables\AutobusPage\AutobusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Pages\Tables\BuyerPage\BuyerEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

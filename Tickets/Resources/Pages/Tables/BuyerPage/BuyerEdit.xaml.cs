@@ -18,16 +18,16 @@ using Tickets.Resources.LibsAndDitcionary;
 namespace Tickets.Resources.Pages.Tables.BuyerPage
 {
     /// <summary>
-    /// Логика взаимодействия для BuyerView.xaml
+    /// Логика взаимодействия для BuyerEdit.xaml
     /// </summary>
-    public partial class BuyerView : Page
+    public partial class BuyerEdit : Page
     {
-        public BuyerView()
+        Buyer _current;
+        public BuyerEdit(Buyer buyer)
         {
             InitializeComponent();
-            dg_buyer.ItemsSource = AppData.getContext().Buyer.ToList();
-            AppData.AddDock<Buyer>(dg_buyer, () => new BuyerPage.BuyerEdit(null));
+            _current = buyer;
+            AppData.dockPanel.Children.Clear();
         }
-
     }
 }
