@@ -28,8 +28,8 @@ namespace Tickets.Resources.LibsAndDictionary
                 try
                 {
                     var context = AppData.getContext();
-                    context.Set<T>();
-                    context.SaveChanges();
+                    context.Set<T>().RemoveRange(removes);
+                    context.SaveChangesAsync();
                     MessageBox.Show("Данные удалены");
                     dataGrid.ItemsSource = context.Set<T>().ToList();
                 }
