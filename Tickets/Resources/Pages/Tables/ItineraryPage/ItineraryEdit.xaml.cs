@@ -18,16 +18,16 @@ using Tickets.Resources.LibsAndDitcionary;
 namespace Tickets.Resources.Pages.Tables.ItineraryPage
 {
     /// <summary>
-    /// Логика взаимодействия для ItineraryView.xaml
+    /// Логика взаимодействия для ItineraryEdit.xaml
     /// </summary>
-    public partial class ItineraryView : Page
+    public partial class ItineraryEdit : Page
     {
-        public ItineraryView()
+        Itinary _current;
+        public ItineraryEdit(Itinary itinary)
         {
             InitializeComponent();
-            dg_itinary.ItemsSource = AppData.getContext().Itinary.ToList();
-            AppData.AddDock<Itinary>(dg_itinary, () => new ItineraryPage.ItineraryEdit(null));
-
+            _current = itinary;
+            AppData.dockPanel.Children.Clear();
         }
     }
 }

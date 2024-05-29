@@ -15,19 +15,19 @@ using System.Windows.Shapes;
 using Tickets.Resources.LibsAndDictionary;
 using Tickets.Resources.LibsAndDitcionary;
 
-namespace Tickets.Resources.Pages.Tables.ItineraryPage
+namespace Tickets.Resources.Pages.Tables.RacePage
 {
     /// <summary>
-    /// Логика взаимодействия для ItineraryView.xaml
+    /// Логика взаимодействия для RaceEdit.xaml
     /// </summary>
-    public partial class ItineraryView : Page
+    public partial class RaceEdit : Page
     {
-        public ItineraryView()
+        Race _current;
+        public RaceEdit(Race race)
         {
             InitializeComponent();
-            dg_itinary.ItemsSource = AppData.getContext().Itinary.ToList();
-            AppData.AddDock<Itinary>(dg_itinary, () => new ItineraryPage.ItineraryEdit(null));
-
+            _current = race;
+            AppData.dockPanel.Children.Clear();
         }
     }
 }

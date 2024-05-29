@@ -26,22 +26,9 @@ namespace Tickets.Resources.Pages.Tables.RacePage
         {
             InitializeComponent();
             dg_race.ItemsSource = AppData.getContext().Race.ToList();
-            addBtns();
+            AppData.AddDock<Race>(dg_race, () => new RacePage.RaceEdit(null));
         }
 
-        private void addBtns()
-        {
-
-            Button btn_del = new Button();
-            Button btn_add = new Button();
-
-            btn_add.Content = "Добавить";
-            btn_del.Content = "Удалить";
-
-            btn_del.Click += (sender, e) => AppData.DeleteItems<User>(dg_race);
-            
-            AppData.dockPanel.Children.Add(btn_add);
-            AppData.dockPanel.Children.Add(btn_del);
-        }
+      
     }
 }

@@ -129,8 +129,14 @@
     <Compile Include="Resources\Pages\Tables\DestinationPage\DestinationView.xaml.cs">
       <DependentUpon>DestinationView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Pages\Tables\ItineraryPage\ItineraryEdit.xaml.cs">
+      <DependentUpon>ItineraryEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Pages\Tables\ItineraryPage\ItineraryView.xaml.cs">
       <DependentUpon>ItineraryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Pages\Tables\RacePage\RaceEdit.xaml.cs">
+      <DependentUpon>RaceEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resources\Pages\Tables\RacePage\RaceView.xaml.cs">
       <DependentUpon>RaceView.xaml</DependentUpon>
@@ -180,7 +186,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\Pages\Tables\ItineraryPage\ItineraryEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Pages\Tables\ItineraryPage\ItineraryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Pages\Tables\RacePage\RaceEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
