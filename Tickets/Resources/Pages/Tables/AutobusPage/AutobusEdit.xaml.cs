@@ -18,16 +18,16 @@ using Tickets.Resources.LibsAndDitcionary;
 namespace Tickets.Resources.Pages.Tables.AutobusPage
 {
     /// <summary>
-    /// Логика взаимодействия для AutobusView.xaml
+    /// Логика взаимодействия для AutobusEdit.xaml
     /// </summary>
-    public partial class AutobusView : Page
+    public partial class AutobusEdit : Page
     {
-        public AutobusView()
+        Autobus _cuurent;
+        public AutobusEdit(Autobus autobus)
         {
             InitializeComponent();
-            dg_bus.ItemsSource = AppData.getContext().Autobus.ToList();
-            AppData.AddDock<Autobus>(dg_bus, () => new AutobusPage.AutobusEdit(null));
+            _cuurent = autobus;
+            AppData.dockPanel.Children.Clear();
         }
-
     }
 }
