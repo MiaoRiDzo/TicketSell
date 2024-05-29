@@ -18,16 +18,16 @@ using Tickets.Resources.LibsAndDitcionary;
 namespace Tickets.Resources.Pages.Tables.DestinationPage
 {
     /// <summary>
-    /// Логика взаимодействия для DestinationView.xaml
+    /// Логика взаимодействия для DestinationEdit.xaml
     /// </summary>
-    public partial class DestinationView : Page
+    public partial class DestinationEdit : Page
     {
-        public DestinationView()
+        Destination _current;
+        public DestinationEdit(Destination destination)
         {
             InitializeComponent();
-            dg_destinatoin.ItemsSource = AppData.getContext().Destination.ToList();
-            AppData.AddDock<Destination>(dg_destinatoin, () => new DestinationPage.DestinationEdit(null));
+            _current = destination;
+            AppData.dockPanel.Children.Clear();
         }
-
     }
 }

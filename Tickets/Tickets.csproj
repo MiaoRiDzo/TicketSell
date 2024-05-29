@@ -123,6 +123,9 @@
     <Compile Include="Resources\Pages\Tables\BuyerPage\BuyerView.xaml.cs">
       <DependentUpon>BuyerView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Pages\Tables\DestinationPage\DestinationEdit.xaml.cs">
+      <DependentUpon>DestinationEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Pages\Tables\DestinationPage\DestinationView.xaml.cs">
       <DependentUpon>DestinationView.xaml</DependentUpon>
     </Compile>
@@ -166,6 +169,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Pages\Tables\BuyerPage\BuyerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Pages\Tables\DestinationPage\DestinationEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
