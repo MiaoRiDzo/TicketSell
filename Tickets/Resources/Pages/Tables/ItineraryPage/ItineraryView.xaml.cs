@@ -26,8 +26,19 @@ namespace Tickets.Resources.Pages.Tables.ItineraryPage
         {
             InitializeComponent();
             dg_itinary.ItemsSource = AppData.getContext().Itinary.ToList();
-            AppData.AddDock<Itinary>(dg_itinary, () => new ItineraryPage.ItineraryEdit(null));
+            AppData.AddDock<Itinary>(dg_itinary, () => AppData.mFrame.Navigate(new ItineraryPage.ItineraryEdit(null)));
+            
+        }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            AppData.getContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            dg_itinary.ItemsSource = AppData.getContext().Itinary.ToList();
+        }
+
+        private void editBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AppData.mFrame.Navigate(new ItineraryPage.ItineraryEdit((sender as Button).DataContext as Itinary));
         }
     }
 }

@@ -5,10 +5,20 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Tickets.Resources.Pages.Tables.ItineraryPage"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="300" d:DesignWidth="700"
       Title="ItineraryEdit">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock x:Name="tb_header" Style="{StaticResource tb_head3}"/>
+        <StackPanel Orientation="Horizontal" Margin="4" HorizontalAlignment="Right">
+            <Label Content="Адрес точки отбытия:" VerticalAlignment="Center" Margin="4 0"/>
+            <ComboBox x:Name="cb_startPoint" SelectedItem="{Binding Destination}" DisplayMemberPath="Adress"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="4" HorizontalAlignment="Right">
+            <Label Content="Адрес точки прибытия:" VerticalAlignment="Center" Margin="4 0"/>
+            <ComboBox x:Name="cb_endPoint" SelectedItem="{Binding Destination1}" DisplayMemberPath="Adress"/>
+        </StackPanel>
+
+        <Button x:Name="btn_save" Content="Сохранить" HorizontalAlignment="Right" Click="btn_save_Click"/>
+    </StackPanel>
 </Page>

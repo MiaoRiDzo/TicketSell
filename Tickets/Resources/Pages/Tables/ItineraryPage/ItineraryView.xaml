@@ -4,7 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Tickets.Resources.Pages.Tables.ItineraryPage"
-      mc:Ignorable="d" 
+      mc:Ignorable="d"
+      Loaded="Page_Loaded"
       d:DesignHeight="300" d:DesignWidth="770"
       Title="ItineraryView">
 
@@ -13,9 +14,6 @@
             <RowDefinition Height="20*"/>
             <RowDefinition Height="91*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,10,0" Height="46">
-            <Button Content="Поиск"/>
-        </StackPanel>
         <DataGrid Grid.Row="1" x:Name="dg_itinary" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
 
@@ -25,8 +23,8 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="editBtn" >
-                                <Image Source="/Resources/Image/Icons/edit.png"/>
+                            <Button x:Name="editBtn" Click="editBtn_Click">
+                                <Image Source="/Resources/Images/pencil.png" Width="24" Height="24"/>
                             </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

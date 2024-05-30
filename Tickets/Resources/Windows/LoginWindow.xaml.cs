@@ -29,25 +29,34 @@ namespace Tickets.Resources.Windows
 
         private void btn_enter_Click(object sender, RoutedEventArgs e)
         {
-            List<User> users = AppData.getContext().User.ToList();
-            foreach (User user in users) {
-                if (user.UserLogin == tb_login.Text) {
-                    if(user.UserPassword == MD5Hash.StringToMD5(tb_pass.Password))
+            try
+            {
+                List<User> users = AppData.getContext().User.ToList();
+                foreach (User user in users)
+                {
+                    if (user.UserLogin == tb_login.Text)
                     {
-                        AppData.authUser = user;
-                        MainWin mainWin = new MainWin();
-                        AppData.mainWin = mainWin;
-                        mainWin.Show();
-                        this.Close();
+                        if (user.UserPassword == MD5Hash.StringToMD5(tb_pass.Password))
+                        {
+                            AppData.authUser = user;
+                            MainWin mainWin = new MainWin();
+                            AppData.mainWin = mainWin;
+                            mainWin.Show();
+                            this.Close();
+                        }
                     }
                 }
-            }
-            if (AppData.authUser != null) {
+                if (AppData.authUser != null)
+                {
 
-            }
-            else
+                }
+                else
+                {
+                    MessageBox.Show("Введенные данные не верны. Проверьте логин и пароль, или обратитесь к администратору");
+                }
+            }catch (Exception ex)
             {
-                MessageBox.Show("Введенные данные не верны. Проверьте логин и пароль, или обратитесь к администратору");
+                MessageBox.Show(ex.Message.ToString());
             }
         }
     }
