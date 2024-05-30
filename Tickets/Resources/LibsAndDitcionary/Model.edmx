@@ -77,15 +77,9 @@
           <Property Name="Price" Type="money" Nullable="false" />
           <Property Name="Commentary" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "SellTicketsDB.dbo.User" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="UserID" />
-            <PropertyRef Name="UserName" />
-            <PropertyRef Name="UserLogin" />
-            <PropertyRef Name="UserPassword" />
-            <PropertyRef Name="RoleID" />
           </Key>
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -186,15 +180,7 @@
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [User].[UserID] AS [UserID], 
-    [User].[UserName] AS [UserName], 
-    [User].[UserLogin] AS [UserLogin], 
-    [User].[UserPassword] AS [UserPassword], 
-    [User].[RoleID] AS [RoleID]
-    FROM [dbo].[User] AS [User]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Itinerary_Destination" Association="Self.FK_Itinerary_Destination">
             <End Role="Destination" EntitySet="Destination" />
             <End Role="Itinary" EntitySet="Itinary" />
@@ -317,10 +303,6 @@
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="UserID" />
-            <PropertyRef Name="UserName" />
-            <PropertyRef Name="UserLogin" />
-            <PropertyRef Name="UserPassword" />
-            <PropertyRef Name="RoleID" />
           </Key>
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />

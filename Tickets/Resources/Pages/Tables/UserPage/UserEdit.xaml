@@ -8,7 +8,27 @@
       d:DesignHeight="300" d:DesignWidth="770"
       Title="UserEdit">
 
-    <Grid>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock x:Name="tb_header" Style="{StaticResource tb_head3}"/>
+        <StackPanel Orientation="Horizontal" Margin="4" HorizontalAlignment="Right">
+            <Label Content="Имя пользователя:" VerticalAlignment="Center" Margin="4 0"/>
+            <TextBox x:Name="tb_fullName" Text="{Binding UserName}" />
+        </StackPanel>
         
-    </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="4">
+            <Label Content="Логин:" VerticalAlignment="Center" Margin="4 0"/>
+            <TextBox x:Name="tb_login" Text="{Binding UserLogin}" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="4">
+            <Label Content="Пароль:" VerticalAlignment="Center" Margin="4 0"/>
+            <PasswordBox x:Name="tb_password"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="4">
+            <Label Content="Роль:" VerticalAlignment="Center" Margin="4 0"/>
+            <ComboBox x:Name="cbRole" SelectedItem="{Binding Role}" DisplayMemberPath="RoleName" Margin="10"/>
+        </StackPanel>
+        <Button x:Name="btn_save" Content="Сохранить" HorizontalAlignment="Right" Click="btn_save_Click"/>
+    </StackPanel>
 </Page>

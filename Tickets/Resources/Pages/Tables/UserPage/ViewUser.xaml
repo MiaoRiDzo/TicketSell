@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:Tickets.Resources.Pages.Tables.UserPage"
       mc:Ignorable="d" 
       d:DesignHeight="330" d:DesignWidth="770"
+      Loaded="Page_Loaded"
       Title="ViewUser">
 
     <Grid>
@@ -14,7 +15,8 @@
             <RowDefinition Height="91*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,10,0" Height="46">
-            <Button Content="Поиск"/>
+            <TextBox x:Name="tb_search"/>
+            <Button Content="Поиск" Click="Button_Click"/>
         </StackPanel>
         <DataGrid Grid.Row="1" x:Name="dg_user" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
@@ -25,7 +27,7 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="editBtn" >
+                            <Button x:Name="editBtn" Click="editBtn_Click">
                                 <Image Source="/Resources/Image/Icons/edit.png"/>
                             </Button>
                         </DataTemplate>
