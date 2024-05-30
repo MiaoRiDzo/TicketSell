@@ -23,22 +23,25 @@ namespace Tickets.Resources.LibsAndDictionary
         public static void DeleteItems<T>(DataGrid dataGrid) where T : class
         {
             var removes = dataGrid.SelectedItems.Cast<T>().ToList();
-            if (MessageBox.Show($"Вы точно хотите удалить следующие {removes.Count()} элементы?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (removes.Count != 0)
             {
-                try
+                if (MessageBox.Show($"Вы точно хотите удалить следующие {removes.Count()} элементы?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
-                    var context = AppData.getContext();
-                    context.Set<T>().RemoveRange(removes);
-                    context.SaveChangesAsync();
-                    MessageBox.Show("Данные удалены");
-                    dataGrid.ItemsSource = context.Set<T>().ToList();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
+                    try
+                    {
+                        var context = AppData.getContext();
+                        context.Set<T>().RemoveRange(removes);
+                        context.SaveChangesAsync();
+                        MessageBox.Show("Данные удалены");
+                        dataGrid.ItemsSource = context.Set<T>().ToList();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                    }
                 }
             }
-     
+            else { MessageBox.Show("Не выбран ни один элемент."); }
         }
 
         public static void AddDock<T>(DataGrid dataGrid, Action addNavigationAction) where T : class

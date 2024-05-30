@@ -26,8 +26,40 @@ namespace Tickets.Resources.Pages.Tables.BuyerPage
         {
             InitializeComponent();
             dg_buyer.ItemsSource = AppData.getContext().Buyer.ToList();
-            AppData.AddDock<Buyer>(dg_buyer, () => new BuyerPage.BuyerEdit(null));
+            AppData.AddDock<Buyer>(dg_buyer, () => AppData.mFrame.Navigate(new BuyerPage.BuyerEdit(null)));
         }
 
+        private void editBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AppData.mFrame.Navigate(new BuyerPage.BuyerEdit((sender as Button).DataContext as Buyer));
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            AppData.AddDock<User>(dg_buyer, () => AppData.mFrame.Navigate(new UserPage.UserEdit(null)));
+            AppData.getContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            dg_buyer.ItemsSource = AppData.getContext().Buyer.ToList();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            dg_buyer.ItemsSource = AppData.getContext().Buyer.ToList();
+
+            if (!string.IsNullOrEmpty(tb_search.Text))
+            {
+                List<Buyer> list = dg_buyer.ItemsSource as List<Buyer>;
+                if (list != null)
+                {
+                    string filter = tb_search.Text; // Получаем текст из TextBox
+                    List<Buyer> filteredList = list.FindAll(buyer => buyer.FullName.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+                    dg_buyer.ItemsSource = filteredList;
+                }
+            }
+            else
+            {
+                dg_buyer.ItemsSource = AppData.getContext().Buyer.ToList();
+            }
+
+        }
     }
-}
+} 

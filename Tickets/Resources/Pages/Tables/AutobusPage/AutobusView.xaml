@@ -14,7 +14,8 @@
             <RowDefinition Height="91*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,10,0" Height="46">
-            <Button Content="Поиск"/>
+            <TextBox x:Name="tb_search"/>
+            <Button Content="Поиск" Click="Button_Click"/>
         </StackPanel>
         <DataGrid Grid.Row="1" x:Name="dg_bus" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
@@ -25,8 +26,8 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="editBtn" >
-                                <Image Source="/Resources/Image/Icons/edit.png"/>
+                            <Button x:Name="editBtn" Click="editBtn_Click">
+                                <Image Source="/Resources/Images/pencil.png" Width="12" Height="12"/>
                             </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

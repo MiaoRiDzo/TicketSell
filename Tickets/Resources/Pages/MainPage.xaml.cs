@@ -56,5 +56,9 @@ namespace Tickets.Resources.Pages
             AppData.mFrame.Navigate(new Pages.Tables.BuyerPage.BuyerView());
         }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            AppData.dockPanel.Children.Clear();
+        }
     }
 }

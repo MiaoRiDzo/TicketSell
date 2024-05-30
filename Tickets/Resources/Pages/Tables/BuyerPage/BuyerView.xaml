@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Tickets.Resources.Pages.Tables.BuyerPage"
       mc:Ignorable="d" 
+      Loaded="Page_Loaded"
       d:DesignHeight="300" d:DesignWidth="770"
       Title="BuyerView">
 
@@ -14,7 +15,8 @@
             <RowDefinition Height="91*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,10,0" Height="46">
-            <Button Content="Поиск"/>
+            <TextBox x:Name="tb_search"/>
+            <Button Content="Поиск" Click="Button_Click"/>
         </StackPanel>
         <DataGrid Grid.Row="1" x:Name="dg_buyer" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
@@ -22,13 +24,13 @@
                 <DataGridTextColumn Header="ФИО" Binding="{Binding FullName}"/>
                 <DataGridTextColumn Header="Номер телефона" Binding="{Binding PhoneNumber}"/>
                 <DataGridTextColumn Header="Номер паспорта" Binding="{Binding PassportNumber}"/>
-                <DataGridTextColumn Header="День рождения" Binding="{Binding Birthday}"/>
+                <DataGridTextColumn x:Name="dgc_birthday" Header="День рождения" Binding="{Binding Birthday}"/>
 
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="editBtn" >
-                                <Image Source="/Resources/Image/Icons/edit.png"/>
+                            <Button x:Name="editBtn" Click="editBtn_Click">
+                                <Image Source="/Resources/Images/pencil.png" Width="12" Height="12"/>
                             </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

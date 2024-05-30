@@ -26,8 +26,32 @@ namespace Tickets.Resources.Pages.Tables.AutobusPage
         {
             InitializeComponent();
             dg_bus.ItemsSource = AppData.getContext().Autobus.ToList();
-            AppData.AddDock<Autobus>(dg_bus, () => new AutobusPage.AutobusEdit(null));
+            AppData.AddDock<Autobus>(dg_bus, () => AppData.mFrame.Navigate(new AutobusPage.AutobusEdit(null)));
         }
 
+        private void editBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AppData.mFrame.Navigate(new AutobusPage.AutobusEdit((sender as Button).DataContext as Autobus));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            dg_bus.ItemsSource = AppData.getContext().Autobus.ToList();
+
+            if (!string.IsNullOrEmpty(tb_search.Text))
+            {
+                List<Autobus> list = dg_bus.ItemsSource as List<Autobus>;
+                if (list != null)
+                {
+                    string filter = tb_search.Text; // Получаем текст из TextBox
+                    List<Autobus> filteredList = list.FindAll(autobus => autobus.BusModel.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+                    dg_bus.ItemsSource = filteredList;
+                }
+            }
+            else
+            {
+                dg_bus.ItemsSource = AppData.getContext().User.ToList();
+            }
+        }
     }
 }
