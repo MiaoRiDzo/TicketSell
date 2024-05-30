@@ -26,9 +26,24 @@ namespace Tickets.Resources.Pages.Tables.RacePage
         {
             InitializeComponent();
             dg_race.ItemsSource = AppData.getContext().Race.ToList();
-            AppData.AddDock<Race>(dg_race, () => new RacePage.RaceEdit(null));
+            AppData.AddDock<Race>(dg_race, () => AppData.mFrame.Navigate(new RacePage.RaceEdit(null)));
         }
 
-      
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void editBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AppData.mFrame.Navigate(new RacePage.RaceEdit((sender as Button).DataContext as Race));
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            AppData.AddDock<Race>(dg_race, () => AppData.mFrame.Navigate(new RacePage.RaceEdit(null)));
+            AppData.getContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            dg_race.ItemsSource = AppData.getContext().Race.ToList();
+        }
     }
 }

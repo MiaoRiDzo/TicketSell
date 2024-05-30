@@ -23,6 +23,7 @@ namespace Tickets.Resources.LibsAndDitcionary
         public int ItinaryID { get; set; }
         public int DeparturePoint { get; set; }
         public int ArrivalPoint { get; set; }
+        public string ItinaryName { get; set; }
     
         public virtual Destination Destination { get; set; }
         public virtual Destination Destination1 { get; set; }

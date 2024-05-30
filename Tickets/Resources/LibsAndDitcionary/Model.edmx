@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище SellTicketsDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище SellTicketsDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Autobus">
           <Key>
             <PropertyRef Name="AutobusID" />
@@ -35,6 +35,7 @@
             <PropertyRef Name="ItinaryID" />
           </Key>
           <Property Name="ItinaryID" Type="int" Nullable="false" />
+          <Property Name="ItinaryName" Type="nvarchar" MaxLength="50" />
           <Property Name="DeparturePoint" Type="int" Nullable="false" />
           <Property Name="ArrivalPoint" Type="int" Nullable="false" />
         </EntityType>
@@ -87,7 +88,7 @@
           <Property Name="UserPassword" Type="char" MaxLength="32" Nullable="false" />
           <Property Name="RoleID" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Itinerary_Destination">
+        <Association Name="FK_Itinary_Destination">
           <End Role="Destination" Type="Self.Destination" Multiplicity="1" />
           <End Role="Itinary" Type="Self.Itinary" Multiplicity="*" />
           <ReferentialConstraint>
@@ -99,7 +100,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Itinerary_Destination1">
+        <Association Name="FK_Itinary_Destination1">
           <End Role="Destination" Type="Self.Destination" Multiplicity="1" />
           <End Role="Itinary" Type="Self.Itinary" Multiplicity="*" />
           <ReferentialConstraint>
@@ -181,11 +182,11 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Itinerary_Destination" Association="Self.FK_Itinerary_Destination">
+          <AssociationSet Name="FK_Itinary_Destination" Association="Self.FK_Itinary_Destination">
             <End Role="Destination" EntitySet="Destination" />
             <End Role="Itinary" EntitySet="Itinary" />
           </AssociationSet>
-          <AssociationSet Name="FK_Itinerary_Destination1" Association="Self.FK_Itinerary_Destination1">
+          <AssociationSet Name="FK_Itinary_Destination1" Association="Self.FK_Itinary_Destination1">
             <End Role="Destination" EntitySet="Destination" />
             <End Role="Itinary" EntitySet="Itinary" />
           </AssociationSet>
@@ -210,8 +211,7 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SellTicketsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -254,6 +254,7 @@
           <NavigationProperty Name="Destination" Relationship="Self.FK_Itinerary_Destination" FromRole="Itinary" ToRole="Destination" />
           <NavigationProperty Name="Destination1" Relationship="Self.FK_Itinerary_Destination1" FromRole="Itinary" ToRole="Destination" />
           <NavigationProperty Name="Race" Relationship="Self.FK_Race_Itinerary" FromRole="Itinary" ToRole="Race" />
+          <Property Name="ItinaryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Race">
           <Key>
@@ -471,6 +472,7 @@
           <EntitySetMapping Name="Itinary">
             <EntityTypeMapping TypeName="SellTicketsDBModel.Itinary">
               <MappingFragment StoreEntitySet="Itinary">
+                <ScalarProperty Name="ItinaryName" ColumnName="ItinaryName" />
                 <ScalarProperty Name="ItinaryID" ColumnName="ItinaryID" />
                 <ScalarProperty Name="DeparturePoint" ColumnName="DeparturePoint" />
                 <ScalarProperty Name="ArrivalPoint" ColumnName="ArrivalPoint" />

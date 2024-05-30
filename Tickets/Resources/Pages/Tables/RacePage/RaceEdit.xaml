@@ -8,7 +8,33 @@
       d:DesignHeight="300" d:DesignWidth="770"
       Title="RaceEdit">
 
-    <Grid>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Margin="4" HorizontalAlignment="Right">
+            <Label Content="Номер рейса:" VerticalAlignment="Center" Margin="4 0"/>
+            <TextBox x:Name="tb_raceNum" Text="{Binding RaceNum}" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="4">
+            <Label Content="Маршрут:" VerticalAlignment="Center" Margin="4 0"/>
+            <ComboBox x:Name="cbItinary" SelectedItem="{Binding Itinary}" DisplayMemberPath="ItinaryName" Margin="10"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="4">
+            <Label Content="Автобус:" VerticalAlignment="Center" Margin="4 0"/>
+            <ComboBox x:Name="cbAutobus" SelectedItem="{Binding Autobus}" DisplayMemberPath="BusNum" Margin="10"/>
+        </StackPanel>
         
-    </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="4">
+            <Label Content="Дата рейса:" VerticalAlignment="Center" Margin="4 0"/>
+            <DatePicker x:Name="dtDataRace" Margin="10" Width="160"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="4" HorizontalAlignment="Right">
+            <Label Content="Цена билета:" VerticalAlignment="Center" Margin="4 0"/>
+            <TextBox x:Name="tb_price" Text="{Binding Price}" PreviewTextInput="tb_price_PreviewTextInput" DataObject.Pasting="NumericTextBox_Pasting" Width="64"/>
+        </StackPanel>
+
+        <Button x:Name="btn_save" Content="Сохранить" HorizontalAlignment="Right" Click="btn_save_Click"/>
+    </StackPanel>
+
 </Page>

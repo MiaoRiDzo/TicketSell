@@ -63,6 +63,9 @@ namespace Tickets.Resources.Pages.Tables.ItineraryPage
 
             if (_current.ItinaryID>= 0)
             {
+                Destination start = cb_startPoint.SelectedItem as Destination;
+                Destination end = cb_endPoint.SelectedItem as Destination;
+                _current.ItinaryName = start.Adress + " -> " + end.Adress;
                 if (newIns)
                 {
                     _current.ItinaryID= getNextId(_current);

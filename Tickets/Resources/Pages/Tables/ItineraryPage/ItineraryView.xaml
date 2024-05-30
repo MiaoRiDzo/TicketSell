@@ -24,7 +24,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button x:Name="editBtn" Click="editBtn_Click">
-                                <Image Source="/Resources/Images/pencil.png" Width="24" Height="24"/>
+                                <Image Source="/Resources/Images/pencil.png"/>
                             </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
