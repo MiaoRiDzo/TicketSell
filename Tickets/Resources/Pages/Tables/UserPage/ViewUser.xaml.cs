@@ -48,14 +48,12 @@ namespace Tickets.Resources.Pages.Tables.UserPage
 
             if (!string.IsNullOrEmpty(tb_search.Text))
             {
-                // Предположим, что у вас есть DataGridView с именем dgUsers
-                List<User> list = dg_user.ItemsSource as List<User>; // Получаем List<User> из DataSource
-                if (list != null) // Проверяем, что он не null
+                List<User> list = dg_user.ItemsSource as List<User>;
+                if (list != null) 
                 {
                     string filter = tb_search.Text; // Получаем текст из TextBox
-                    List<User> filteredList = list.FindAll(user =>
-                        user.UserName.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0); // Создаем отфильтрованный список по лямбда-выражению
-                    dg_user.ItemsSource = filteredList; // Привязываем отфильтрованный список к DataGridView
+                    List<User> filteredList = list.FindAll(user => user.UserName.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0); 
+                    dg_user.ItemsSource = filteredList; 
                 }
             }
             else

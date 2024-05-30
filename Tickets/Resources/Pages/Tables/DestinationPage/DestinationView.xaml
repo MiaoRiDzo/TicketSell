@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:Tickets.Resources.Pages.Tables.DestinationPage"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="770"
+      Loaded="Page_Loaded"
       Title="DestinationView">
     <Grid>
         <Grid.RowDefinitions>
@@ -13,18 +14,19 @@
             <RowDefinition Height="91*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,10,0" Height="46">
-            <Button Content="Поиск"/>
+            <TextBox x:Name="tb_search"/>
+            <Button Content="Поиск" Click="Button_Click"/>
         </StackPanel>
         <DataGrid Grid.Row="1" x:Name="dg_destinatoin" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
 
-                <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}"/>
+                <DataGridTextColumn Header="Адрес остановки" Binding="{Binding Adress}"/>
 
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="editBtn" >
-                                <Image Source="/Resources/Image/Icons/edit.png"/>
+                            <Button x:Name="editBtn" Click="editBtn_Click" >
+                                <Image Source="/Resources/Images/pencil.png"/>
                             </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
