@@ -19,7 +19,7 @@ namespace Tickets.Resources.LibsAndDictionary
              return _context;
         }
 
-        //Общие методы
+        //Метод удаления
         public static void DeleteItems<T>(DataGrid dataGrid) where T : class
         {
             var removes = dataGrid.SelectedItems.Cast<T>().ToList();

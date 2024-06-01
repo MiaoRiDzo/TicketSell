@@ -35,10 +35,12 @@ namespace Tickets.Resources.Pages.Tables.TicketsPage
             {
                 dtDatePurchase.SelectedDate = ticket.PurchaseDate;
                 _current = ticket;
+                newIns = false;
             }
             dtDatePurchase.SelectedDate = DateTime.Now;
             cbBuyer.ItemsSource = AppData.getContext().Buyer.ToList();
             cbRace.ItemsSource = AppData.getContext().Race.ToList();
+            DataContext = _current;
         }
 
         private static int getNextId(Ticket current)
