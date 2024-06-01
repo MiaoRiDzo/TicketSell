@@ -24,6 +24,7 @@ namespace Tickets.Resources.Pages
         public MainPage()
         {
             InitializeComponent();
+            if (AppData.authUser.Role.RoleID == 1) { btn_users.Visibility = Visibility.Collapsed;  }
         }
 
         private void btn_users_Click(object sender, RoutedEventArgs e)
@@ -59,6 +60,12 @@ namespace Tickets.Resources.Pages
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             AppData.dockPanel.Children.Clear();
+        }
+
+        private void btn_bilets_Click(object sender, RoutedEventArgs e)
+        {
+            AppData.mFrame.Navigate(new Pages.Tables.TicketsPage.TicketsView());
+
         }
     }
 }

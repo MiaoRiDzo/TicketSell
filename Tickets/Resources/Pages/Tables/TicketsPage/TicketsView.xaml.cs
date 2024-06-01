@@ -22,12 +22,47 @@ namespace Tickets.Resources.Pages.Tables.TicketsPage
     /// </summary>
     public partial class TicketsView : Page
     {
-        public TicketsView(Ticket ticket)
+        public TicketsView()
         {
             InitializeComponent();
             dg_ticket.ItemsSource = AppData.getContext().Ticket.ToList();
-            AppData.AddDock<Ticket>(dg_ticket, () => new TicketsPage.TicketsEdit(null));
+            AppData.AddDock<Ticket>(dg_ticket, () => AppData.mainWin.mFrame.Navigate(new TicketsPage.TicketsEdit(null)));
 
         }
+
+        private void editBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AppData.mainWin.mFrame.Navigate(new TicketsPage.TicketsEdit((sender as Button).DataContext as Ticket));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            dg_ticket.ItemsSource = AppData.getContext().Ticket.ToList();
+
+            if (!string.IsNullOrEmpty(tb_search.Text))
+            {
+                List<Ticket> list = dg_ticket.ItemsSource as List<Ticket>;
+                if (list != null)
+                {
+                    string filter = tb_search.Text; // Получаем текст из TextBox
+                    List<Ticket> filteredList = list.FindAll(ticket => ticket.Buyer.FullName.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+                    dg_ticket.ItemsSource = filteredList;
+                }
+            }
+            else
+            {
+                dg_ticket.ItemsSource = AppData.getContext().Ticket.ToList();
+            }
+
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            AppData.AddDock<Ticket>(dg_ticket, () => AppData.mFrame.Navigate(new TicketsPage.TicketsEdit(null)));
+            AppData.getContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            dg_ticket.ItemsSource = AppData.getContext().Ticket.ToList();
+        }
+
+
     }
 }

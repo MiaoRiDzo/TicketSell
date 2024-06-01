@@ -163,6 +163,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Resources\Windows\moreDetailsWins\ticketsFilter.xaml.cs">
+      <DependentUpon>ticketsFilter.xaml</DependentUpon>
+    </Compile>
     <Page Include="Resources\LibsAndDitcionary\StyleDict.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -235,6 +238,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Resources\Windows\moreDetailsWins\ticketsFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -275,6 +282,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\pencil.png" />
+    <Resource Include="Resources\Images\coupon.png" />
     <Content Include="Resources\LibsAndDitcionary\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>

@@ -4,11 +4,33 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Tickets.Resources.Pages.Tables.TicketsPage"
-      mc:Ignorable="d" 
+      mc:Ignorable="d"
       d:DesignHeight="300" d:DesignWidth="770"
       Title="TicketsEdit">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="4">
+            <Label Content="Покупатель:" VerticalAlignment="Center" Margin="4 0"/>
+            <ComboBox x:Name="cbBuyer" SelectedItem="{Binding Buyer}" DisplayMemberPath="FullName" Margin="10"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="4">
+            <Label Content="Рейс:" VerticalAlignment="Center" Margin="4 0"/>
+            <ComboBox x:Name="cbRace" SelectedItem="{Binding Race}" DisplayMemberPath="RaceNum" Margin="10"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="4">
+            <Label Content="Дата покупки:" VerticalAlignment="Center" Margin="4 0"/>
+            <DatePicker x:Name="dtDatePurchase" Margin="10" Width="160"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="4" HorizontalAlignment="Right">
+            <Label Content="Коментарии:" VerticalAlignment="Center" Margin="4 0"/>
+            <TextBox x:Name="tbDescriptin" MaxLines="10" Height="64"/>
+        </StackPanel>
+
+        <Button x:Name="btn_save" Content="Сохранить" HorizontalAlignment="Right" Click="btn_save_Click"/>
+    </StackPanel>
+
 </Page>

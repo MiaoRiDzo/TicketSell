@@ -73,7 +73,8 @@ namespace Tickets.Resources.Pages.Tables.RacePage
 
             if (_current.RaceID >= 0)
             {
-                _current.Price = decimal.Parse(tb_price.Text);
+                string originalString = tb_price.Text;
+                _current.Price = decimal.Parse(originalString.Contains(".") ? originalString.Substring(0, originalString.IndexOf('.')) : originalString);
                 _current.RaceDate = dtDataRace.SelectedDate.Value;
                 if (newIns)
                 {

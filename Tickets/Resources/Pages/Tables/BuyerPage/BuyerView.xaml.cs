@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Tickets.Resources.LibsAndDictionary;
 using Tickets.Resources.LibsAndDitcionary;
+using Tickets.Resources.Windows.moreDetailsWins;
 
 namespace Tickets.Resources.Pages.Tables.BuyerPage
 {
@@ -59,6 +60,12 @@ namespace Tickets.Resources.Pages.Tables.BuyerPage
                 dg_buyer.ItemsSource = AppData.getContext().Buyer.ToList();
             }
 
+        }
+
+        private void moreBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ticketsFilter ticketsFilter = new ticketsFilter((sender as Button).DataContext as Buyer);
+            ticketsFilter.Show();
         }
     }
 } 

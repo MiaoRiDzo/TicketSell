@@ -32,6 +32,7 @@ namespace Tickets.Resources.Pages.Tables.ItineraryPage
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            AppData.AddDock<Itinary>(dg_itinary, () => AppData.mFrame.Navigate(new ItineraryPage.ItineraryEdit(null)));
             AppData.getContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             dg_itinary.ItemsSource = AppData.getContext().Itinary.ToList();
         }
