@@ -20,9 +20,7 @@ using TicketSeller.Resources.LibsAndDictionary;
 
 namespace Tickets.Resources.Pages.Tables.RacePage
 {
-    /// <summary>
-    /// Логика взаимодействия для RaceEdit.xaml
-    /// </summary>
+
     public partial class RaceEdit : Page
     {
         Race _current = new Race();

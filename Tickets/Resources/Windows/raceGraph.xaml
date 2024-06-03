@@ -1,14 +1,11 @@
-﻿<Page x:Class="Tickets.Resources.Pages.Tables.RacePage.RaceView"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Tickets.Resources.Pages.Tables.RacePage"
-      mc:Ignorable="d"
-      Loaded="Page_Loaded"
-      d:DesignHeight="300" d:DesignWidth="770"
-      Title="RaceView">
-
+﻿<Window x:Class="Tickets.Resources.Windows.raceGraph"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tickets.Resources.Windows"
+        mc:Ignorable="d"
+        Title="График рейсов" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
@@ -16,7 +13,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,10,0" Height="46">
             <TextBox x:Name="tb_search"/>
-            <Button Content="Поиск" Click="Button_Click"/>
+            <Button Content="Поиск"/>
         </StackPanel>
         <DataGrid Grid.Row="1" x:Name="dg_race" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
@@ -28,16 +25,8 @@
                 <DataGridTextColumn Header="Дата рейса" Binding="{Binding RaceDate}"/>
                 <DataGridTextColumn Header="Цена билета" Binding="{Binding Price}"/>
 
-                <DataGridTemplateColumn x:Name="edit_btn_grid">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button x:Name="editBtn" Click="editBtn_Click">
-                                <Image Source="/Resources/Images/pencil.png"/>
-                            </Button>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
-</Page>
+</Window>

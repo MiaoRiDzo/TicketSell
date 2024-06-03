@@ -19,9 +19,7 @@ using TicketSeller.Resources.LibsAndDictionary;
 
 namespace Tickets.Resources.Pages.Tables.TicketsPage
 {
-    /// <summary>
-    /// Логика взаимодействия для TicketsEdit.xaml
-    /// </summary>
+
     public partial class TicketsEdit : Page
     {
         Ticket _current = new Ticket();

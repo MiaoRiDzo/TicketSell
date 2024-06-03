@@ -59,5 +59,12 @@ namespace Tickets.Resources.Windows
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void btn_user_Click(object sender, RoutedEventArgs e)
+        {
+            raceGraph raceGraph = new raceGraph();
+            raceGraph.Show();
+            this.Close();
+        }
     }
 }

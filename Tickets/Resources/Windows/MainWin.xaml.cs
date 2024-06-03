@@ -23,7 +23,6 @@ namespace Tickets.Resources.Windows
         public MainWin()
         {
             InitializeComponent();
-            
             tb_userName.Text = tb_userName.Text + AppData.authUser.UserName;
             tb_userRole.Text = AppData.authUser.Role.RoleName;
             AppData.mFrame = this.mFrame;

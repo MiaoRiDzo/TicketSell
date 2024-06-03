@@ -166,6 +166,9 @@
     <Compile Include="Resources\Windows\moreDetailsWins\ticketsFilter.xaml.cs">
       <DependentUpon>ticketsFilter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Windows\raceGraph.xaml.cs">
+      <DependentUpon>raceGraph.xaml</DependentUpon>
+    </Compile>
     <Page Include="Resources\LibsAndDitcionary\StyleDict.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -239,6 +242,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Resources\Windows\moreDetailsWins\ticketsFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Windows\raceGraph.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
